@@ -1,0 +1,107 @@
+:root {
+  --accent: #ff6200;
+  --accent-light: #ffe8cc;
+  --text-primary: #1f2937;
+  --text-muted: #6b7280;
+  --highlight: #ff6200;
+  --background: #fffaf4;
+}
+
+/* Container */
+.why-container {
+  background-color: var(--background);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Header */
+.why-header h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.why-header .highlight {
+  color: var(--highlight);
+}
+
+.why-header p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Grid */
+.why-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 2rem;
+}
+
+/* Cards */
+.why-card {
+  width: 100%;
+  max-width: 370px;         /* Controls max width of card */
+  min-height: 270px;        /* Adjusts the card height */
+  margin: auto;       /* Center aligns card in grid cell */
+  background: white;
+  border-top: 4px solid var(--accent-light);
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  position: relative;
+  z-index: 1;
+  transform: perspective(1000px);
+}
+@media (max-width: 600px) {
+  .why-card {
+    max-width: 90%;
+    min-height: 280px;
+  }
+}
+.why-video-section {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.dark .why-video-section {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.why-card .icon {
+  font-size: 2.75rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.why-card:hover {
+  background: linear-gradient(145deg, #fff4db, #ffe0b3);
+  transform: scale(1.06) translateY(-5px);
+  box-shadow: 0 12px 32px rgba(255, 98, 0, 0.2);
+  border-color: var(--accent);
+  z-index: 5;
+}
+
+.why-card:hover .icon {
+  color: #d85c00;
+  transform: scale(1.15) rotate(2deg);
+}
+
+.why-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.975rem;
+  line-height: 1.4;
+}
+
+
