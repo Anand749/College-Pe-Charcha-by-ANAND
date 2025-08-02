@@ -1,0 +1,154 @@
+/* Carousel.css */
+
+.carousel-container {
+  position: relative;
+  width: 90%; /* Responsive width */
+  max-width: 900px; /* Max width to keep it elegant */
+  height: 500px; /* Fixed height for the carousel area */
+  margin: 30px auto; /* Top/Bottom margin, auto left/right to center */
+  overflow: hidden; /* Crucial to hide images outside view */
+  border-radius: 10px; /* Rounded corners for the carousel box */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow as in video */
+  background-color: #333; /* Fallback/background for transitions */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  display: block;
+  transition: opacity 0.4s ease-in-out; /* Adjusted for 0.5s cycle */
+  position: absolute; /* Allows images to layer during fade */
+  top: 0;
+  left: 0;
+}
+
+.carousel-image.fade-in {
+  opacity: 1;
+}
+
+.carousel-image.fade-out {
+  opacity: 0;
+  /* Keep position absolute to allow next image to show underneath */
+}
+
+/* Overlay for text content */
+.carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 60px 30px 30px; /* More padding, especially at the bottom for text */
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4) 50%, transparent); /* Stronger gradient */
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Clearer text shadow */
+  font-family: 'Arial', sans-serif; /* Common sans-serif font */
+}
+
+.carousel-tag {
+  background-color: #fbd344; /* Yellowish background for the tag (like VITM) */
+  color: #333; /* Dark text on tag */
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-bottom: 15px; /* Space below tag */
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-title {
+  font-size: 2.2em; /* Larger title */
+  font-weight: 800; /* Extra bold */
+  margin: 10px 0 5px;
+  line-height: 1.2;
+}
+
+.carousel-location {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.carousel-type {
+  font-size: 1em;
+  opacity: 0.7;
+}
+
+/* Navigation Buttons */
+.carousel-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4); /* Slightly lighter semi-transparent */
+  color: white;
+  border: none;
+  padding: 20px 15px; /* Larger hit area */
+  cursor: pointer;
+  font-size: 2.5em; /* Larger arrows */
+  font-weight: lighter; /* Thinner arrow symbol */
+  line-height: 0.5; /* Adjust vertical alignment of arrow */
+  border-radius: 5px; /* Subtle rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  user-select: none; /* Prevent text selection on arrow */
+}
+
+.carousel-nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.05); /* Slight scale on hover */
+}
+
+.carousel-nav-button.left {
+  left: 15px;
+}
+
+.carousel-nav-button.right {
+  right: 15px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 300px; /* Adjust height for smaller screens */
+    width: 95%;
+  }
+  .carousel-overlay {
+    padding: 40px 15px 15px;
+  }
+  .carousel-tag {
+    font-size: 0.75em;
+    padding: 4px 8px;
+    margin-bottom: 10px;
+  }
+  .carousel-title {
+    font-size: 1.6em;
+  }
+  .carousel-location {
+    font-size: 1em;
+  }
+  .carousel-type {
+    font-size: 0.8em;
+  }
+  .carousel-nav-button {
+    padding: 10px 8px;
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 250px;
+  }
+  .carousel-overlay {
+    padding: 30px 10px 10px;
+  }
+  .carousel-title {
+    font-size: 1.4em;
+  }
+  .carousel-location {
+    font-size: 0.9em;
+  }
+}
