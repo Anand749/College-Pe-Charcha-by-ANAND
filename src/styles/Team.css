@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #ffffff;
+  --bg-card: #FFF7F2;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-color: #fca311; /* A gold/orange accent */
+  --border-color: #333333;
+}
+.m1{
+  color: #A0A0A0;
+}
+
+.team-section {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-secondary);
+  padding: 80px 20px;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.meet{
+  color: #1F2937;
+}   
+
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.team-header .highlight {
+  color: var(--accent-color);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  
+  margin-bottom: 80px;
+}
+
+.stat-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+}
+.wan{
+  color: #000000;
+}
+.wanny{
+  font-weight: bold;
+  color: #FCA311;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  color: #FCA311;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  color: #91470f;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color:#0b0808;
+}
+
+/* Team Grid */
+.team-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: 30px;
+  /* Reduced margin-bottom to make space for the new button */
+ margin-bottom: 60px; 
+}
+
+.team-card {
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.explore-more-container {
+  text-align: center; /* Centers the button */
+  margin-bottom: 80px; /* Space between this button and the "Join Mission" card */
+}
+.explore-more-btn {
+  background-color: transparent;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 12px 35px;
+  cursor: pointer;
+  display: inline-block; /* Needed for padding and margin to apply correctly */
+  text-decoration: none; /* Removes underline from the Link component */
+  transition: all 0.3s ease;
+}
+.explore-more-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-dark); /* Using your variable for white */
+  transform: translateY(-3px);
+}
+.team-card:hover {
+  transform: translateY(-22px);
+   
+  border-color: var(--accent-color);
+  background-color: #ffffff;
+ 
+   
+}
+
+.team-photo-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 35px; /* Creates space for the badge */
+  
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+   
+  
+}
+
+.role-badge {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: var(--bg-dark);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+  color: rgb(121, 87, 24);
+}
+
+.team-education {
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-style: var(--accent-color);
+  margin-bottom: 15px;
+  color: #b6730f;
+}
+
+.team-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: inherit;
+  color: #5c4b30;
+  min-height: 80px; /* Ensures cards have similar heights */
+}
+.team-socials {
+  display: flex;
+  justify-content: center; /* Centers the icons horizontally */
+  align-items: center; /* Aligns icons vertically */
+  gap: 20px; /* Adjust the space between icons */
+  margin-top: auto; /* Pushes icons to the bottom of the card */
+  padding-top: 15px; /* Adds space above the icons */
+  /* color: #ffb703; */
+}
+.team-socials a {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+   
+}
+
+.team-socials a:hover {
+  color: var(--accent-color);
+}
+
+/* Join Mission CTA */
+.join-mission-card {
+  background-color: #faf9f8;
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+
+}
+
+.join-mission-card h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  background-color: #FCA311;
+  color: var(--bg-dark);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #43371a;
+  transform: translateY(-2px);
+}
+

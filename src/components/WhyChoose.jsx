@@ -7,7 +7,7 @@ const WhyChoose = () => {
       {/* Header */}
       <div className="why-header">
         <h2>
-          Why Choose <span className="highlight">College Pe चर्चा</span>
+           <span className="high">Why Choose</span>   <span className="highlight">College Pe चर्चा</span>
         </h2>
         <p>
           We're more than just a platform – we're your bridge to informed college decisions

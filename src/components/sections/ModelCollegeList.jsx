@@ -58,7 +58,7 @@ const ModelCollegeList = () => {
               </div>
             ))}
           </div>
-
+           
           <div className="bg-orange-50 p-5 rounded-xl mt-6 text-sm text-gray-700 shadow-sm">
             <h4 className="font-semibold mb-3 text-gray-900 text-base">What You Get:</h4>
             <ul className="list-disc ml-5 space-y-1">
@@ -72,6 +72,7 @@ const ModelCollegeList = () => {
             </ul>
           </div>
         </div>
+         
 
         {/* Right Section */}
         <div className="md:w-1/2 max-w-md relative">
@@ -98,10 +99,14 @@ const ModelCollegeList = () => {
               ))}
             </ul>
 
-            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-4 mt-6 rounded-xl shadow-sm transition-all duration-200 hover:scale-[1.02]">
-              Get Your Model List
-            </button>
-
+           <a
+  href="https://forms.gle/d9wmHh3dSMvNLS1w9"
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="w-full block text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-4 mt-6 rounded-xl shadow-sm transition-all duration-200 hover:scale-[1.02]"
+>
+  Get Your Model List
+</a>
             <p className="text-xs text-gray-500 text-center mt-3">
               Perfect for students targeting top colleges in Mumbai & Pune
             </p>

@@ -9,19 +9,19 @@ const WhatsAppSection = () => {
         heading={<div className="t1">Join Our WhatsApp Community</div>}
         text="Connect instantly with peers, mentors, and college seniors. Get real-time updates, ask questions, and be part of a vibrant student community!"
         buttonText="Join WhatsApp"
-        link="#"
+        link="https://chat.whatsapp.com/HbLY6umdG2G5jKfeRIfbxf"
         extras="🚀 Fast answers • 🤝 Peer support • 🆓 Free to join"
       />
       <Card
 
 
-        heading={<div className="t1">Get College Preference List</div>}
-        text="Receive a curated list of college preferences based on your interests and career goals. Make informed decisions with expert guidance.
+        heading={<div className="t1">Connect On YouTube  </div>}
+        text="Get insights, tutorials, and expert advice on college admissions and career paths directly from our team on the Techz DADA YouTube channel.
                                                     
         "
-        buttonText="Get College List"
-        link="#"
-        extras="💡 Real ideas • 🤝 Team building • 🧠 Brainstorm freely"
+        buttonText="Subscribe"
+        link="https://youtube.com/@techzdada1103?si=daKmsT95yQi50d-d"
+        extras="🎥 Video Guides • 💬 Live Q&A • 🔔 Stay Updated"
       />
     </div>
   );

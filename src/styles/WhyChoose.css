@@ -6,7 +6,9 @@
   --highlight: #ff6200;
   --background: #fffaf4;
 }
-
+.high{
+  color: #21293b;
+}
 /* Container */
 .why-container {
   background-color: var(--background);
@@ -39,7 +41,7 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin-top: 2rem;
 }
-
+ 
 /* Cards */
 .why-card {
   width: 100%;
@@ -55,8 +57,10 @@
   transition: all 0.35s ease;
   position: relative;
   z-index: 1;
+  
   transform: perspective(1000px);
 }
+
 @media (max-width: 600px) {
   .why-card {
     max-width: 90%;

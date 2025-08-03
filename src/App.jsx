@@ -8,7 +8,8 @@ import WhatsAppSection from "./components/WhatsAppSection"; // ✅ Import it
 import ModelCollegeList from "./components/sections/ModelCollegeList"; // ✅ Import ModelCollegeList
 import Review from "./components/sections/Review";
 import Team from "./components/sections/Team";
-
+import Footer from "./components/sections/Footer";
+ 
 function App() {
   return (
     <>
@@ -17,10 +18,11 @@ function App() {
       <WhyChoose />
       <TrustedBySection />
       <Carousel />
-      <WhatsAppSection /> {/* ✅ Add here */}
+      <WhatsAppSection />  
        <ModelCollegeList />
        <Review />
        <Team />
+       <Footer /> 
     </>
   );
 }
