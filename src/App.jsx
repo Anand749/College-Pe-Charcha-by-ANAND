@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
@@ -9,6 +10,7 @@ import ModelCollegeList from "./components/sections/ModelCollegeList"; // ✅ Im
 import Review from "./components/sections/Review";
 import Team from "./components/sections/Team";
 import Footer from "./components/sections/Footer";
+
  
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
        <Review />
        <Team />
        <Footer /> 
+       
     </>
   );
 }
