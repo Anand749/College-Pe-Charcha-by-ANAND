@@ -1,59 +1,246 @@
 .card {
   background-color: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  width: 500px;
-  height: 325px;
-  padding-top: 50px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 280px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #e6854d;
   text-align: center;
-  transition: transform 0.2s ease;
-   
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dark .card {
+  background-color: #111111;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  border: 1px solid #ff6200;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 2rem;
+    min-height: 320px;
+    border-radius: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: 2.5rem;
+    min-height: 350px;
+    border-radius: 1.5rem;
+  }
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark .card:hover {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+@media (min-width: 640px) {
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark .card:hover {
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+    transform: translateY(-8px) scale(1.02);
+  }
 }
 
 .card img {
-  width: 40px;
-  margin-bottom: 20px;
+  width: 2.5rem;
+  margin-bottom: 1rem;
 }
-.t1{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+@media (min-width: 640px) {
+  .card img {
+    width: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.t1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
-  font-size: larger;
+  font-size: 1.125rem;
+  line-height: 1.3;
 }
+
+@media (min-width: 640px) {
+  .t1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .t1 {
+    font-size: 1.375rem;
+  }
+}
+
 .card h2 {
   color: #f97316;
-  font-size: 22px;
-  margin: 0 0 12px;
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card h2 {
+    font-size: 1.375rem;
+  }
 }
 
 .card p {
   color: #333;
-  font-size: 15px;
-  margin-bottom: 20px;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.dark .card p {
+  color: #d1d5db;
+}
+
+@media (min-width: 640px) {
+  .card p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card p {
+    font-size: 1rem;
+  }
 }
 
 .whatsapp-btn {
   background-color: #f97316;
   color: white;
-  padding: 12px 20px;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 25px;
-  font-weight: bold;
+  border-radius: 2rem;
+  font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 0.5rem;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 120px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.dark .whatsapp-btn:hover {
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.5);
+}
+
+@media (min-width: 640px) {
+  .whatsapp-btn {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+    border-radius: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .whatsapp-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+.whatsapp-btn:active {
+  transform: translateY(0);
 }
 
 .extras {
-  margin-top: 10px;
-  font-size: 13px;
+  margin-top: 1rem;
+  font-size: 0.75rem;
   color: #555;
+  line-height: 1.4;
+}
+
+.dark .extras {
+  color: #a0a0a0;
+}
+
+@media (min-width: 640px) {
+  .extras {
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .extras {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 639px) {
+  .card {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  
+  .whatsapp-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .card {
+    min-height: 300px;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1280px) {
+  .card {
+    min-height: 380px;
+  }
+  
+  .card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    font-size: 1.1rem;
+  }
+  
+  .whatsapp-btn {
+    font-size: 1.1rem;
+    padding: 1.125rem 3rem;
+  }
 }

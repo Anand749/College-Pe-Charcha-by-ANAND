@@ -33,11 +33,11 @@ const benefits = [
 
 const ModelCollegeList = () => {
   return (
-    <div className="model-wrapper bg-[#fff7f2] px-6 md:px-12 py-12 max-w-7xl mx-auto rounded-3xl shadow-xl">
+    <div className="model-wrapper bg-white px-6 md:px-12 py-12 max-w-7xl mx-auto rounded-3xl shadow-xl">
       <div className="flex flex-col md:flex-row justify-between gap-12 items-start">
-        
+
         {/* Left Section */}
-        <div className="md:w-1/2 space-y-6">
+        <div className="md:w-1/2 space-y-6 ">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug">
             Why Choose Our <span className="text-orange-600">Model List?</span>
           </h2>

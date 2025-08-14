@@ -30,7 +30,7 @@ body {
 }
 
 .site-title {
-  color: #61dafb; /* React blue-ish color */
+  color: #f11111; /* React blue-ish color */
   font-size: 1.8em;
   font-weight: bold;
   text-decoration: none;
@@ -55,7 +55,7 @@ body {
 }
 
 .header-nav a:hover {
-  color: #61dafb;
+  color: #f11111;
 }
 
 /* Tagline below header */

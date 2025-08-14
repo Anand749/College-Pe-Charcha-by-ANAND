@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import "../../styles/Team.css";
 import { FaUsers, FaUniversity, FaCheckCircle, FaHeart, FaLinkedin, FaTwitter, FaEnvelope, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
-import anandImg from '../../assets/team1/anand.png';
-import samarthImg from '../../assets/team1/SamarthDhagate.jpg';
-import vedantiImg from '../../assets/team1/vedanti.jpg';
+
+import anandImg from "../../assets/team1/anandImg.png";
+import samarthImg from "../../assets/team1/samarthImg.jpg";
+import vedantiImg from "../../assets/team1/vedantiImg.jpg";
+
+
 import { color } from 'framer-motion';
 
 // --- DATA (Replace with your actual team data) ---
@@ -124,8 +128,13 @@ const Team = () => {
           <p> <span className='wan'>We're always looking for passionate students who want to help their juniors succeed. Join our team and make a difference in thousands of lives.</span></p>
           <button className="cta-button">Apply to Join Team</button>
         </div>
+        <div className="view-more-container">
+  <Link to="/full-team" className="view-more-button">
+    View More →
+  </Link>
+</div>
 
-      </div>
+      </div>    
     </section>
   );
 };

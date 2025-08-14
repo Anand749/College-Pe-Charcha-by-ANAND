@@ -1,3 +1,192 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF7EF;
+}
+
+/* Dark Mode Global Styles */
+.dark {
+  background-color: #000000;
+  color: #f9fafb;
+}
+
+.dark body {
+  background-color: #000000;
+  color: #f9fafb;
+}
+
+.dark .home-container {
+  background-color: #000000;
+}
+
+.dark .hero-container {
+  background-color: #000000;
+}
+
+.dark .why-container {
+  background-color: #000000;
+}
+
+.dark .trusted-by-section {
+  background-color: #000000;
+}
+
+.dark .carousel-container {
+  background-color: #000000;
+}
+
+.dark .team-section {
+  background-color: #000000;
+}
+
+.dark .site-footer {
+  background-color: #111111;
+}
+
+/* Global Container Styling */
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.dark .container {
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Section Spacing */
+.section-spacing {
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+@media (min-width: 640px) {
+  .section-spacing {
+    margin-bottom: 5rem;
+    padding: 3rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    margin-bottom: 6rem;
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    margin-bottom: 8rem;
+    padding: 5rem 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-spacing {
+    margin-bottom: 10rem;
+    padding: 6rem 0;
+  }
+}
+
+/* WhatsApp Section Styles */
+.whatsapp-section {
+  padding: 2rem 1rem;
+  background-color: #fff7ef;
+}
+
+.dark .whatsapp-section {
+  background-color: #111111;
+}
+
+@media (min-width: 640px) {
+  .whatsapp-section {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .whatsapp-section {
+    padding: 4rem 2rem;
+  }
+}
+
+.whatsapp-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .whatsapp-container {
+    gap: 4rem;
+  }
+}
+
+/* Global responsive improvements */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFF7EF;
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .carousel-nav-button,
+  .btn-journey,
+  .btn-predict,
+  .cta-button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

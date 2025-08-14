@@ -1,76 +1,252 @@
 .trusted-by-section {
-    background-color: #FFFAF4; 
-    padding: 60px 20px;
+    background-color: #fff7ef; 
+    padding: 2rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 250px;
+    min-height: 200px;
+}
+
+.dark .trusted-by-section {
+    background-color: #000000;
+}
+
+@media (min-width: 640px) {
+    .trusted-by-section {
+        padding: 3rem 2rem;
+        min-height: 250px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trusted-by-section {
+        padding: 4rem 2rem;
+        min-height: 300px;
+    }
 }
 
 .trusted-by-container {
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     max-width: 1200px;
     width: 100%;
 }
 
-.trusted-by-card {
-    background: linear-gradient(145deg, #ffffff, #ffffff); /* Soft dark gradient */
-    border-radius: 16px;
-    padding: 30px 40px;
+.trusted-by-header {
     text-align: center;
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+}
+
+.trusted-by-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.dark .trusted-by-title {
+    color: #f9fafb;
+}
+
+.trusted-by-subtitle {
+    color: #475569;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dark .trusted-by-subtitle {
+    color: #d1d5db;
+}
+
+.trusted-by-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .trusted-by-stats {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trusted-by-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.trusted-by-card {
+    background: linear-gradient(145deg, #ffffff, #ffffff);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s;
     border: 1px solid #f0950d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+}
+
+.dark .trusted-by-card {
+    background: linear-gradient(145deg, #111111, #111111);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff6200;
+}
+
+@media (min-width: 640px) {
+    .trusted-by-card {
+        padding: 2rem 1.5rem;
+        border-radius: 1.25rem;
+        min-height: 180px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trusted-by-card {
+        padding: 2.5rem 2rem;
+        border-radius: 1.5rem;
+        min-height: 200px;
+    }
 }
 
 .trusted-by-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(255, 94, 0, 0.35); /* Orange glow */
-    background: linear-gradient(145deg, #1a1a1a, #2a1e17); /* Slight warm glow */
-    ;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 94, 0, 0.25);
+    background: linear-gradient(145deg, #fff8f0, #fff4e6);
 }
 
+.dark .trusted-by-card:hover {
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    box-shadow: 0 8px 25px rgba(255, 94, 0, 0.5);
+    transform: translateY(-5px) scale(1.02);
+}
+
+@media (min-width: 640px) {
+    .trusted-by-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(255, 94, 0, 0.3);
+    }
+    
+    .dark .trusted-by-card:hover {
+        box-shadow: 0 12px 30px rgba(255, 94, 0, 0.6);
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+@media (min-width: 1024px) {
+    .trusted-by-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(255, 94, 0, 0.35);
+    }
+    
+    .dark .trusted-by-card:hover {
+        box-shadow: 0 15px 35px rgba(255, 94, 0, 0.7);
+        transform: translateY(-10px) scale(1.02);
+    }
+}
 
 .trusted-by-card .number {
-    font-size: 3.5em;
+    font-size: 2.5rem;
     font-weight: bold;
-    background: linear-gradient(to right, #ff6a00, #f6c90e); /* Warm orange-yellow */
+    background: linear-gradient(to right, #ff6a00, #f6c90e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    background-clip: text;
+    margin-bottom: 0.5rem;
     line-height: 1;
 }
 
-.trusted-by-card .description {
-    font-size: 1.1em;
-    color: #010101;
-    font-weight: 500;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+@media (min-width: 640px) {
+    .trusted-by-card .number {
+        font-size: 3rem;
+        margin-bottom: 0.75rem;
+    }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .trusted-by-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .trusted-by-card {
-        width: 90%;
-        max-width: 400px;
-    }
-
+@media (min-width: 1024px) {
     .trusted-by-card .number {
-        font-size: 2.8em;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
     }
+}
 
+.trusted-by-card .description {
+    font-size: 0.875rem;
+    color: #010101;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.dark .trusted-by-card .description {
+    color: #f9fafb;
+}
+
+@media (min-width: 640px) {
     .trusted-by-card .description {
-        font-size: 1em;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trusted-by-card .description {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 639px) {
+    .trusted-by-card {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+    
+    .trusted-by-card .number {
+        font-size: 2.25rem;
+    }
+    
+    .trusted-by-card .description {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .trusted-by-stats {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .trusted-by-card {
+        min-height: 160px;
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1280px) {
+    .trusted-by-stats {
+        gap: 3rem;
+    }
+    
+    .trusted-by-card {
+        min-height: 220px;
+    }
+    
+    .trusted-by-card .number {
+        font-size: 4rem;
+    }
+    
+    .trusted-by-card .description {
+        font-size: 1.2rem;
     }
 }

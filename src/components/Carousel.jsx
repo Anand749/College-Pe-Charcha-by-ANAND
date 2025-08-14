@@ -1,93 +1,104 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "../styles/Carousel.css";
 
- 
-const imagesData = [
-  // ... (your imagesData array remains the same)
+// Local images
+import coep from "../assets/coep.webp";
+import vit from "../assets/vit.jpg";
+import pict from "../assets/pict.webp";
+import pccoe from "../assets/pccoe.jpg";
+import vjti from "../assets/vjti.jpg";
+
+const colleges = [
   {
-    src: './assests/assets/coep.webp', // Replace with your image URLs
-    alt: 'COEP Pune Building',
-    tag: 'Premier Engineering College',
-    title: 'COEP Pune',
-    location: 'Pune, Maharashtra',
-    type: 'Engineering',
+    img: vjti,
+    name: "Veermata Jijabai Technological Institute (VJTI)",
+    address: "H R Mahajani Rd, Matunga, Mumbai, Maharashtra 400019",
+    link: "#",
   },
   {
-    src: '../assets/gmc.webp', // Replace with your image URLs
-    alt: 'Government Medical College Pune Building',
-    tag: 'Top Medical College',
-    title: 'Government Medical College Pune',
-    location: 'Pune, Maharashtra',
-    type: 'Medical',
+    img: vit,
+    name: "Pune Institute of Computer Technology (PICT)",
+    address: "Survey No. 27, Near Trimurti Chowk, Bharati Vidhyapith Campus, Pune",
+    link: "#",
   },
   {
-    src: 'https://via.placeholder.com/900x500/B2D8D8/FFFFFF?text=College+Image+3', // Replace with your image URLs
-    alt: 'Mumbai University Building',
-    tag: 'Leading Arts & Science',
-    title: 'Mumbai University',
-    location: 'Mumbai, Maharashtra',
-    type: 'Arts & Science',
+    img: coep,
+    name: "Walchand College of Engineering",
+    address: "Government Colony, Vishrambag, Sangli, Maharashtra",
+    link: "#",
+  },
+  {
+    img: pict,
+    name: "Cummins College of Engineering for Women",
+    address: "Karve Nagar, Pune, Maharashtra 411052",
+    link: "#",
+  },
+  {
+    img: pccoe,
+    name: "Vishwakarma Institute of Technology (VIT)",
+    address: "Upper Indira Nagar, Bibwewadi, Pune 411037",
+    link: "#",
   },
 ];
 
 const Carousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [fade, setFade] = useState(true); // State to control fade transition
+  const rowRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const nextSlide = () => {
-    setFade(false); // Start fade-out
-    // The timeout below should ideally be slightly longer than the CSS transition duration
-    // to ensure the fade-out completes before the image changes and fades in.
-    // If your CSS transition is 0.7s, this should be >= 700ms.
-    // However, for a 0.5s *wait*, we'll make the total cycle faster.
-    setTimeout(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % imagesData.length);
-      setFade(true); // Start fade-in for new slide
-    }, 500); // Changed to 500ms to allow fade-out and new slide to appear quickly
-  };
-
-  const prevSlide = () => {
-    setFade(false); // Start fade-out
-    setTimeout(() => {
-      setCurrentSlide((prevSlide) => (prevSlide - 1 + imagesData.length) % imagesData.length);
-      setFade(true); // Start fade-in for new slide
-    }, 570); // Changed to 500ms
-  };
-
-  // --- Auto-play functionality ---
   useEffect(() => {
-    // Set the interval for auto-play to 700ms (0.7 seconds)
-    const autoPlayInterval = setInterval(nextSlide, 700); // Change slide every 0.7 seconds (700ms)
+    if (!rowRef.current) return;
 
-    // Cleanup function
-    return () => clearInterval(autoPlayInterval);
-  }, [currentSlide]); // Dependency array: Restart interval when currentSlide changes
+    const row = rowRef.current;
+    const getStep = () => {
+      const first = row.querySelector('.college-card');
+      if (!first) return 300;
+      const rect = first.getBoundingClientRect();
+      const gap = parseFloat(getComputedStyle(row).gap || '16');
+      return rect.width + gap;
+    };
 
-  const slide = imagesData[currentSlide];
+    const interval = setInterval(() => {
+      if (isPaused) return;
+      const step = getStep();
+      const nearEnd = row.scrollLeft + row.clientWidth + step >= row.scrollWidth - 1;
+      if (nearEnd) {
+        row.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        row.scrollBy({ left: step, behavior: 'smooth' });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
-    <div className="carousel-container">
-      <img
-        src={slide.src}
-        alt={slide.alt}
-        className={`carousel-image ${fade ? 'fade-in' : 'fade-out'}`}
-      />
-
-      <div className="carousel-overlay">
-        <span className="carousel-tag">{slide.tag}</span>
-        <h2 className="carousel-title">{slide.title}</h2>
-        <p className="carousel-location">{slide.location}</p>
-        <p className="carousel-type">{slide.type}</p>
+    <section className="explore-section">
+      <div className="explore-header">
+        <h2 className="explore-title">Explore Top Colleges</h2>
+        <p className="explore-sub">Scroll through and discover colleges. Connect with students and get real insights!</p>
       </div>
 
-      <button onClick={prevSlide} className="carousel-nav-button left">
-        &lt;
-      </button>
-      <button onClick={nextSlide} className="carousel-nav-button right">
-        &gt;
-      </button>
-    </div>
+      <div
+        className="explore-row"
+        ref={rowRef}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        aria-label="Auto-sliding list of top colleges"
+      >
+        {colleges.map((c, i) => (
+          <article className="college-card" key={i}>
+            <div className="card-media">
+              <img src={c.img} alt={c.name} loading="lazy" />
+            </div>
+            <div className="card-body">
+              <h3 className="card-title" title={c.name}>{c.name}</h3>
+              <p className="card-address">{c.address}</p>
+              <a className="card-cta" href={c.link}>Explore More</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 };
 
