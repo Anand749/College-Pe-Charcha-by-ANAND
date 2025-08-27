@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
           <Link to="/predictor" className={`transition hover:underline hover:scale-105 text-sm lg:text-base ${isDarkMode ? 'text-gray-300 hover:text-orange-400' : 'text-gray-700 hover:text-orange-500'}`}><b>Predict College</b></Link>
-          <Link to="#" className={`transition hover:underline hover:scale-105 text-sm lg:text-base ${isDarkMode ? 'text-gray-300 hover:text-orange-400' : 'text-gray-700 hover:text-orange-500'}`}><b>College List</b></Link>
+          <Link to="/ModelCollegeList" className={`transition hover:underline hover:scale-105 text-sm lg:text-base ${isDarkMode ? 'text-gray-300 hover:text-orange-400' : 'text-gray-700 hover:text-orange-500'}`}><b>College List</b></Link>
           <Link to="#" className={`transition hover:underline hover:scale-105 text-sm lg:text-base ${isDarkMode ? 'text-gray-300 hover:text-orange-400' : 'text-gray-700 hover:text-orange-500'}`}><b>About</b></Link>
           <Link to="#" className="bg-gradient-to-r from-orange-400 to-yellow-300 text-white px-3 sm:px-4 py-1.5 rounded-full font-medium shadow-md hover:opacity-90 transition hover:scale-105 text-sm lg:text-base"><b>Contact Us</b></Link>
           

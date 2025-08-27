@@ -7,10 +7,10 @@ const WhyChoose = () => {
       {/* Header */}
       <div className="why-header">
         <h2>
-           <span className="high">Why Choose</span>   <span className="highlight">College Pe चर्चा</span>
+           <span className="high">Why Choose</span><span className="highlight">College Pe चर्चा</span>
         </h2>
         <p>
-          We're more than just a platform – we're your bridge to informed college decisions
+          We're more than just a platform  we're your bridge to informed college decisions
         </p>
       </div>
 
@@ -45,9 +45,9 @@ const WhyChoose = () => {
       </div>
     </section>
 
-      
- 
-<section className="why-video-section py-16 px-4 md:px-12 bg-gradient-to-br from-[#e6e6e6] to-white] dark:from-[#ffffff] dark:to-[#fbfbfb] transition-all duration-300 ">
+
+
+<section className="why-video-section py-16 px-4 md:px-12 bg-gradient-to-br from-[#e6e6e6] to-white dark:from-[#ffffff] dark:to-[#fbfbfb] transition-all duration-300">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
     
     {/* Left Text */}

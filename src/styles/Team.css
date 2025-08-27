@@ -28,7 +28,9 @@
 
 .view-more-container {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-top: -50px;
+
 }
 
 .view-more-button {

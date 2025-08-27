@@ -17,7 +17,8 @@
 }
 
 .high {
-  color: #f11111;
+  color: #000000;
+  font-weight: 700;
 }
 
 .dark .high {
@@ -75,7 +76,7 @@
 }
 
 .why-header .highlight {
-  color: var(--highlight);
+  color:rgb(255, 128, 0) ;
 }
 
 .why-header p {
@@ -205,7 +206,7 @@
     transform: scale(1.15) rotate(2deg);
   }
 }
-
+  
 .why-card h3 {
   font-size: 1.125rem;
   font-weight: 600;
@@ -234,8 +235,17 @@
 
 /* What Is Section */
 .what-is-section {
-  background: linear-gradient(135deg, #fff7ef 0%, #ffe8cc 100%);
-  padding: 2rem 1rem;
+  background: white;
+  padding: 5rem 1rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 1.8rem;
+  border-width: 0.2px;
+  border-style: solid;
+  border-color: #d85c00;
+  box-shadow: #d85c00;
+  box-sizing: border-box;
+
 }
 
 .dark .what-is-section {

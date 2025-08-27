@@ -19,7 +19,7 @@
 
 .site-footer {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--footer-bg);
+  background-color:#ffffff;
   color: var(--footer-text);
   padding: 2rem 1rem 1rem;
 }

@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 const reviews = [
   {
     name: "Anway Shimpne",
-    review: "Through CollegePecharcha’s WhatsApp groups, I got to talk directly with seniors from different colleges. They cleared all my doubts honestly and shared real experiences. It felt like having a mentor throughout the process. Totally worth it! Plus, that marketing reel through which I reached here was also too good .🙌🙌 Great idea, great execution, and great collaboration. I hope to see your team in VIT soon!",
+    review: "Through CollegePecharcha’s WhatsApp groups, I got to talk directly with seniors from different colleges. They cleared all my doubts honestly and shared real experiences.  I hope to see your team in VIT soon!",
   },
   {
     name: "Rohan Deshmukh",

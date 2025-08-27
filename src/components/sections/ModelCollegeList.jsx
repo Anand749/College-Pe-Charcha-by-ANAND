@@ -33,7 +33,7 @@ const benefits = [
 
 const ModelCollegeList = () => {
   return (
-    <div className="model-wrapper bg-white px-6 md:px-12 py-12 max-w-7xl mx-auto rounded-3xl shadow-xl">
+    <div className="model-wrapper px-6 md:px-12 py-12 max-w-7xl mx-auto rounded-3xl shadow-xl bg-black">
       <div className="flex flex-col md:flex-row justify-between gap-12 items-start">
 
         {/* Left Section */}

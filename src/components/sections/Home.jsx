@@ -5,6 +5,7 @@ import {
   MessageCircle, CheckCircle, FileText, TrendingUp, Star 
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
+import Review from './Review';  // Import the external Review component
 import "../../styles/HeroSection.css";
 import "../../styles/WhyChoose.css";
 import "../../styles/TrustedBySection.css";
@@ -33,6 +34,7 @@ import {
 } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import CountUp from "../../components/CountUp";
+
 // College Section Component (replaces Carousel)
 // Sample college data (you can replace with your actual data)
 const colleges = [
@@ -628,9 +630,8 @@ const WhyChoose = () => {
         <h2>
            <span className="high">Why Choose</span>   <span className="highlight">College Pe चर्चा</span>
         </h2>
-        <p>
-          We're more than just a platform – we're your bridge to informed college decisions
-        </p>
+        <p>We're more than just a platform we're your bridge to informed college decisions</p>
+         
       </div>
 
       <div className="why-grid">
@@ -710,7 +711,7 @@ const TrustedBySection = () => {
       <div className="trusted-by-container">
         <div className="trusted-by-header">
           <h2 className="trusted-by-title">Trusted by Students Across Maharashtra</h2>
-          <p className="trusted-by-subtitle">Join thousands of students who trust us for their college decisions</p>
+          <p className="trusted-by-subtitle">Thousands of students who trust us for their college decisions</p>
         </div>
         <div className="trusted-by-stats">
           {stats.map((stat, index) => (
@@ -729,136 +730,6 @@ const TrustedBySection = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-
-// Review Component
-const reviews = [
-  {
-    name: "Anway Shimpne",
-    review: "Through CollegePecharcha's WhatsApp groups, I got to talk directly with seniors from different colleges. They cleared all my doubts honestly and shared real experiences. It felt like having a mentor throughout the process. Totally worth it! Plus, that marketing reel through which I reached here was also too good .🙌🙌 Great idea, great execution, and great collaboration. I hope to see your team in VIT soon!",
-  },
-  {
-    name: "Rohan Deshmukh",
-    review: "Amazing support from seniors. Loved the hackathons and events!",
-  },
-  {
-    name: "Sneha Kulkarni",
-    review: "I found my dream career thanks to the placement cell at VIT Pune.",
-  },
-  {
-    name: "Priya Sharma",
-    review: "The guidance I received helped me choose the perfect college for my career goals.",
-  },
-  {
-    name: "Amit Patel",
-    review: "Excellent platform for connecting with seniors and getting real insights about colleges.",
-  },
-  {
-    name: "Neha Singh",
-    review: "The WhatsApp community is incredibly helpful and supportive.",
-  },
-];
-
-const Review = () => {
-  const { isDarkMode } = useTheme();
-  const scrollRef = useRef(null);
-  
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    let animationFrame;
-    let isHovered = false;
-
-    const scrollStep = () => {
-      if (!isHovered && scrollContainer) {
-        scrollContainer.scrollLeft += 1.5;
-        // Loop back to start for infinite scroll effect
-        if (
-          scrollContainer.scrollLeft + scrollContainer.offsetWidth >=
-          scrollContainer.scrollWidth
-        ) {
-          scrollContainer.scrollLeft = 0;
-        }
-      }
-      animationFrame = requestAnimationFrame(scrollStep);
-    };
-
-    animationFrame = requestAnimationFrame(scrollStep);
-
-    // Pause on hover
-    const handleMouseEnter = () => {
-      isHovered = true;
-    };
-    const handleMouseLeave = () => {
-      isHovered = false;
-    };
-
-    if (scrollContainer) {
-      scrollContainer.addEventListener("mouseenter", handleMouseEnter);
-      scrollContainer.addEventListener("mouseleave", handleMouseLeave);
-    }
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
-        scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
-      }
-    };
-  }, []);
-  
-  return (
-    <div className={`relative w-full py-12 overflow-hidden transition-colors duration-300 ${isDarkMode ? 'bg-[#111111]' : 'bg-[#fff7f2]'}`}>
-      {/* Header */}
-      <div className="text-center mb-10">
-        <h2 className={`text-3xl font-bold transition-colors duration-300 ${isDarkMode ? 'text-gray-100' : 'text-gray-800'}`}>What Our Students Say</h2>
-        <p className={`text-lg mt-2 transition-colors duration-300 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-          Real stories from real students who achieved their college dreams with our guidance.
-        </p>
-      </div>
-
-      {/* Centered container with margins */}
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Scrolling container with auto-scroll */}
-        <div 
-          ref={scrollRef}
-          className="flex gap-6 w-max mx-auto overflow-x-auto scrollbar-hide"
-          style={{
-            WebkitOverflowScrolling: "touch",
-          }}
-        >
-          {[...reviews, ...reviews].map((item, index) => (
-            <div
-              key={index}
-              className="min-w-[300px] max-w-sm h-64 shadow-xl rounded-2xl p-5 flex flex-col justify-between border hover:scale-105 transition-transform duration-300 ease-in-out bg-white border-orange-200"
-            >
-              <div className="text-orange-600 text-xl font-semibold">{item.name}</div>
-              <p className="text-sm mt-3 flex-1 text-gray-600">{item.review}</p>
-              <div className="flex gap-1 text-yellow-400 mt-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#facc15" />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Enhanced fade effects */}
-      <div className="pointer-events-none absolute top-0 right-0 h-full w-16 md:w-32 bg-gradient-to-l from-[#fff7f2] via-[#fff7f2]/80 to-transparent" />
-      <div className="pointer-events-none absolute top-0 left-0 h-full w-16 md:w-32 bg-gradient-to-r from-[#fff7f2] via-[#fff7f2]/80 to-transparent" />
-
-      <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
-    </div>
   );
 };
 
@@ -1099,6 +970,12 @@ const Team = () => {
 const WhatsAppSection = () => {
   return (
     <div className="whatsapp-section">
+      {/* Centered heading */}
+      <h2 className="section-title" style={{ textAlign: "center", marginBottom: "5%", fontSize: "45px", fontWeight: "bold" }}>
+         <span>Talk to Seniors</span> <br />
+         <span style={{ fontWeight: "5", fontSize: "24px", color: "gray", marginBottom: "50px" }}>Chat directly with Seniors from your dream colleges</span>
+      </h2>
+
       <div className="whatsapp-container">
         <Card
           heading={<div className="t1">Join Our WhatsApp Community</div>}
@@ -1364,11 +1241,6 @@ const Home = () => {
         <CollegeSection onCollegeSelect={handleCollegeSelect} />
       </section>
       
-      {/* College Info Pages Section
-      <section className="section-spacing">
-        <CollegeInfoPages />
-      </section>
-       */}
       {/* WhatsApp Section */}
       <section className="section-spacing">
         <WhatsAppSection />
@@ -1379,7 +1251,7 @@ const Home = () => {
         <ModelCollegeList />
       </section>
       
-      {/* Review Section */}
+      {/* Review Section - Now using external component */}
       <section className="section-spacing">
         <Review />
       </section>
@@ -1396,8 +1268,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-

@@ -6,6 +6,7 @@ const WhatsAppSection = () => {
   return (
     <div className="whatsapp-section">
       <div className="whatsapp-container">
+         
         <Card
           heading={<div className="t1">Join Our WhatsApp Community</div>}
           text="Connect instantly with peers, mentors, and college seniors. Get real-time updates, ask questions, and be part of a vibrant student community!"

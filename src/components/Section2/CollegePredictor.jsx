@@ -439,7 +439,7 @@ function PercentileDisplay() {
         startY = doc.autoTable.previous.finalY + 15; // Add margin for the next college
     });
     
-    doc.save("College_Prediction_List.pdf");
+    doc.save("CollegePeCharcha_Prediction_List.pdf");
   };
 
   return (
